@@ -11,12 +11,12 @@ Open index.html in a browser. The same page is retained as my-portfolio.html for
 ### TaskFlow — Full-Stack Task Workspace
 React, TypeScript, Express, PostgreSQL and Prisma. Includes registration, signed HTTP-only sessions, private workspaces, and task management.
 
-[View source code](https://github.com/donaldmwash/javascript-introduction-projects/tree/main/taskflow-fullstack)
+[View source code](https://github.com/donaldmwash/taskflow-fullstack-project)
 
 ### LedgerFlow — Finance Reconciliation Platform
 React and TypeScript application for matching bank statement and ledger CSV exports, reviewing exceptions, and exporting reports.
 
-[View source code](https://github.com/donaldmwash/javascript-introduction-projects/tree/main/finance-reconciliation-platform)
+[View source code](https://github.com/donaldmwash/ledgerflow-finance-reconciliation)
 
 ## About
 
