@@ -653,33 +653,13 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.8rem 5%
 
   <!-- SERVICES -->
   <section id="services" class="p-section">
-    <div class="section-tag">what i offer</div>
-    <h2 class="section-title">Freelance <span class="accent">Services</span></h2>
+    <div class="section-tag">what i can help build</div>
+    <h2 class="section-title">Web Development <span class="accent">Services</span></h2>
     <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-icon">⟨/⟩</div>
-        <div class="service-title">Custom Web Development</div>
-        <div class="service-desc">From landing pages to complex web apps — built fast, clean, and exactly to your spec. Responsive, accessible, and production-ready.</div>
-        <div class="service-price">Starting at $500</div>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">⚡</div>
-        <div class="service-title">Performance Optimization</div>
-        <div class="service-desc">Slow website costing you clients? I'll audit, optimize, and make it blazing fast with measurable, guaranteed improvements.</div>
-        <div class="service-price">Starting at $300</div>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">◱</div>
-        <div class="service-title">Responsive UI/UX</div>
-        <div class="service-desc">Pixel-perfect, mobile-first interfaces that look stunning on every device and convert visitors into paying customers.</div>
-        <div class="service-price">Starting at $400</div>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">⊡</div>
-        <div class="service-title">Database Integration</div>
-        <div class="service-desc">Full-stack solutions with PostgreSQL/MySQL databases, REST APIs, and seamless data management built to scale.</div>
-        <div class="service-price">Starting at $600</div>
-      </div>
+      <div class="service-card reveal"><div class="service-icon">⟨/⟩</div><div class="service-title">Website Design &amp; Development</div><div class="service-desc">Responsive websites for professionals, small businesses, and growing brands, with clear navigation and practical content structure.</div></div>
+      <div class="service-card reveal"><div class="service-icon">▤</div><div class="service-title">Frontend Development</div><div class="service-desc">Interactive interfaces built with modern JavaScript, React, and TypeScript, with attention to accessibility and maintainability.</div></div>
+      <div class="service-card reveal"><div class="service-icon">⌘</div><div class="service-title">Business Web Applications</div><div class="service-desc">Practical dashboards and workflow tools for tracking tasks, managing information, and presenting useful business data.</div></div>
+      <div class="service-card reveal"><div class="service-icon">◫</div><div class="service-title">Backend &amp; Data Integration</div><div class="service-desc">REST API development and relational database integration for applications that need persistent, structured data.</div></div>
     </div>
   </section>
 
@@ -707,694 +687,86 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.8rem 5%
 <!-- ════════════════════════════════════════════════
      PROJECT MODAL
 ════════════════════════════════════════════════ -->
-<div id="modal-overlay">
-  <div id="modal-box">
-    <div class="modal-topbar">
-      <div class="modal-topbar-left">
-        <div class="modal-dots">
-          <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-        </div>
-        <span class="modal-title-bar" id="modal-title-bar">project — live demo</span>
-      </div>
-      <button class="modal-back" onclick="closeModal()">← Back to Portfolio</button>
-      <button class="modal-close" onclick="closeModal()">✕</button>
-    </div>
-    <div id="modal-content"></div>
-  </div>
-</div>
-
-
-<!-- ════════════════════════════════════════════════
-     PROJECT 1: BIZFLOW DASHBOARD
-════════════════════════════════════════════════ -->
-<template id="tpl-dashboard">
-<div style="position:relative;">
-  <!-- Login -->
-  <div class="db-login" id="db-login">
-    <div style="text-align:center;margin-bottom:1.5rem;">
-      <div style="font-family:var(--mono);font-size:1.8rem;color:var(--green);letter-spacing:.1em;">BizFlow</div>
-      <div style="font-family:var(--mono);font-size:.72rem;color:var(--text-dim);margin-top:.2rem;">SME Business Intelligence Platform</div>
-    </div>
-    <div class="db-login-box">
-      <div style="font-family:var(--mono);color:var(--green);margin-bottom:.2rem;font-size:.9rem;">// Sign In</div>
-      <div style="font-family:var(--mono);font-size:.68rem;color:var(--text-dim);margin-bottom:1.5rem;">Select a role to see RBAC in action</div>
-      <label class="db-label">Email</label>
-      <input class="db-input" type="email" value="admin@bizflow.io" placeholder="email">
-      <label class="db-label">Password</label>
-      <input class="db-input" type="password" value="••••••••">
-      <label class="db-label">Login as Role</label>
-      <div class="db-roles">
-        <div class="db-role active" data-role="admin" onclick="dbSelectRole(this)">Admin</div>
-        <div class="db-role" data-role="manager" onclick="dbSelectRole(this)">Manager</div>
-        <div class="db-role" data-role="viewer" onclick="dbSelectRole(this)">Viewer</div>
-      </div>
-      <button class="db-login-btn" onclick="dbLogin()">ACCESS DASHBOARD →</button>
-      <div class="db-hint">Try all 3 roles — each has different <b>access levels</b></div>
-    </div>
-  </div>
-
-  <div class="db-wrap" id="db-app" style="display:none;">
-    <!-- Sidebar -->
-    <div class="db-sidebar">
-      <div class="db-logo"><div class="db-logo-text">Biz<span>Flow</span></div><div class="db-logo-ver">v2.4 // SME Edition</div></div>
-      <div class="db-nav-sec">
-        <div class="db-nav-label">Main</div>
-        <div class="db-nav-item active" onclick="dbSwitch('overview',this)"><span>◈</span> Overview</div>
-        <div class="db-nav-item" onclick="dbSwitch('analytics',this)"><span>◎</span> Analytics</div>
-        <div class="db-nav-item" onclick="dbSwitch('reports',this)"><span>▤</span> Reports <span class="db-nav-badge">3</span></div>
-      </div>
-      <div class="db-nav-sec">
-        <div class="db-nav-label">Manage</div>
-        <div class="db-nav-item" onclick="dbSwitch('users',this)"><span>◉</span> Users</div>
-        <div class="db-nav-item" onclick="dbSwitch('clients',this)"><span>◐</span> Clients <span class="db-nav-badge">12</span></div>
-        <div class="db-nav-item" onclick="dbSwitch('settings',this)"><span>⊕</span> Settings</div>
-      </div>
-      <div class="db-user">
-        <div class="db-av" id="db-av">AD</div>
-        <div><div class="db-uname" id="db-uname">Admin User</div><div class="db-urole" id="db-urole">Administrator</div></div>
-        <button class="db-logout" onclick="dbLogout()">⏻</button>
-      </div>
-    </div>
-    <!-- Main -->
-    <div class="db-main">
-      <div class="db-topbar">
-        <div><h1 id="db-view-title">Overview</h1><p id="db-view-sub">Real-time data active</p></div>
-        <div class="db-topbar-right">
-          <div style="display:flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.68rem;color:var(--green);"><div class="live-dot"></div>LIVE</div>
-          <button class="db-tbtn" onclick="dbRefresh()">↻ Refresh</button>
-          <button class="db-tbtn">⊞ Export</button>
-        </div>
-      </div>
-      <div class="db-content">
-        <!-- OVERVIEW -->
-        <div class="db-view active" id="db-overview">
-          <div class="db-kpi">
-            <div class="db-kpi-card c-green"><div class="db-kpi-label">Total Revenue</div><div class="db-kpi-val" id="db-kpi-rev">$84,320</div><div class="db-kpi-change up">↑ 12.4% vs last month</div></div>
-            <div class="db-kpi-card c-blue"><div class="db-kpi-label">Active Clients</div><div class="db-kpi-val" id="db-kpi-cli">247</div><div class="db-kpi-change up">↑ 8 new this week</div></div>
-            <div class="db-kpi-card c-orange"><div class="db-kpi-label">Pending Orders</div><div class="db-kpi-val">38</div><div class="db-kpi-change dn">↓ 5 need action</div></div>
-            <div class="db-kpi-card c-red"><div class="db-kpi-label">Churn Rate</div><div class="db-kpi-val">2.1%</div><div class="db-kpi-change up">↑ 0.3% improvement</div></div>
-          </div>
-          <div class="db-charts-row">
-            <div class="db-card">
-              <div class="db-card-title">Revenue Trend <span style="font-family:var(--mono);font-size:.65rem;color:var(--green);">● Live</span></div>
-              <div class="db-card-sub">Monthly revenue — last 12 months</div>
-              <svg class="db-chart-svg" viewBox="0 0 480 130" id="db-line-svg">
-                <defs><linearGradient id="dbAreaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00ff88" stop-opacity=".4"/><stop offset="100%" stop-color="#00ff88" stop-opacity="0"/></linearGradient></defs>
-              </svg>
-            </div>
-            <div class="db-card">
-              <div class="db-card-title">By Segment</div>
-              <div class="db-card-sub">Revenue distribution</div>
-              <div class="db-donut-wrap">
-                <svg class="db-donut-svg" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="32" fill="none" stroke="#1e2d3d" stroke-width="16"/>
-                  <circle cx="50" cy="50" r="32" fill="none" stroke="#00ff88" stroke-width="16" stroke-dasharray="80 121" stroke-dashoffset="25" transform="rotate(-90 50 50)"/>
-                  <circle cx="50" cy="50" r="32" fill="none" stroke="#4dabf7" stroke-width="16" stroke-dasharray="44 121" stroke-dashoffset="-55" transform="rotate(-90 50 50)"/>
-                  <circle cx="50" cy="50" r="32" fill="none" stroke="#ff922b" stroke-width="16" stroke-dasharray="22 121" stroke-dashoffset="-99" transform="rotate(-90 50 50)"/>
-                  <text x="50" y="53" text-anchor="middle" font-family="'Share Tech Mono'" font-size="8" fill="#fff">split</text>
-                </svg>
-                <div>
-                  <div class="db-legend-item"><div class="db-legend-dot" style="background:var(--green)"></div>Enterprise<span class="db-legend-val">40%</span></div>
-                  <div class="db-legend-item"><div class="db-legend-dot" style="background:var(--blue)"></div>SMB<span class="db-legend-val">22%</span></div>
-                  <div class="db-legend-item"><div class="db-legend-dot" style="background:var(--orange)"></div>Startup<span class="db-legend-val">11%</span></div>
-                  <div class="db-legend-item"><div class="db-legend-dot" style="background:var(--border)"></div>Other<span class="db-legend-val">27%</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="db-bottom-row">
-            <div class="db-card">
-              <div class="db-card-title">Recent Transactions</div>
-              <div class="db-card-sub">Last 5 payments received</div>
-              <table class="db-table"><thead><tr><th>Client</th><th>Amount</th><th>Date</th><th>Status</th></tr></thead>
-              <tbody><tr><td>Nexus Corp</td><td style="color:var(--green);font-family:var(--mono);">$12,400</td><td style="font-family:var(--mono);font-size:.72rem;color:var(--text-dim);">Mar 05</td><td><span class="db-badge active">active</span></td></tr>
-              <tr><td>BlueSky Ltd</td><td style="color:var(--green);font-family:var(--mono);">$8,750</td><td style="font-family:var(--mono);font-size:.72rem;color:var(--text-dim);">Mar 04</td><td><span class="db-badge active">active</span></td></tr>
-              <tr><td>Orbit Media</td><td style="color:var(--green);font-family:var(--mono);">$5,200</td><td style="font-family:var(--mono);font-size:.72rem;color:var(--text-dim);">Mar 03</td><td><span class="db-badge pending">pending</span></td></tr>
-              <tr><td>DataFlow Inc</td><td style="color:var(--green);font-family:var(--mono);">$14,800</td><td style="font-family:var(--mono);font-size:.72rem;color:var(--text-dim);">Mar 02</td><td><span class="db-badge active">active</span></td></tr>
-              <tr><td>GreenLeaf Co</td><td style="color:var(--green);font-family:var(--mono);">$3,100</td><td style="font-family:var(--mono);font-size:.72rem;color:var(--text-dim);">Mar 01</td><td><span class="db-badge inactive">inactive</span></td></tr>
-              </tbody></table>
-            </div>
-            <div class="db-card">
-              <div class="db-card-title">Activity Feed</div>
-              <div class="db-card-sub">System events</div>
-              <div>
-                <div class="db-activity-item"><div class="db-act-icon" style="background:rgba(0,255,136,.1);color:var(--green);">👤</div><div><div class="db-act-text"><b>New user registered</b> — sarah@nexus.io joined</div><div class="db-act-time">2 min ago</div></div></div>
-                <div class="db-activity-item"><div class="db-act-icon" style="background:rgba(77,171,247,.1);color:var(--blue);">💳</div><div><div class="db-act-text"><b>Payment received</b> — Nexus Corp paid $12,400</div><div class="db-act-time">8 min ago</div></div></div>
-                <div class="db-activity-item"><div class="db-act-icon" style="background:rgba(255,146,43,.1);color:var(--orange);">⚠️</div><div><div class="db-act-text"><b>5 orders</b> awaiting approval</div><div class="db-act-time">15 min ago</div></div></div>
-                <div class="db-activity-item"><div class="db-act-icon" style="background:rgba(0,255,136,.1);color:var(--green);">📊</div><div><div class="db-act-text"><b>Report ready</b> — Q1 Revenue Summary generated</div><div class="db-act-time">1 hr ago</div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- ANALYTICS -->
-        <div class="db-view" id="db-analytics">
-          <div class="db-analytics-2">
-            <div class="db-metric" data-icon=""><div class="db-metric-label">YTD Revenue</div><div class="db-metric-val">$1.02M</div><div class="db-metric-sub">↑ 23% vs same period last year</div></div>
-            <div class="db-metric" data-icon=""><div class="db-metric-label">Customer LTV</div><div class="db-metric-val">$4,280</div><div class="db-metric-sub">Avg across all active accounts</div></div>
-          </div>
-          <div class="db-analytics-3">
-            <div class="db-metric" data-icon=""><div class="db-metric-label">Conversion Rate</div><div class="db-metric-val">18.3%</div><div class="db-metric-sub">↑ 2.1% this quarter</div></div>
-            <div class="db-metric" data-icon=""><div class="db-metric-label">Avg Response</div><div class="db-metric-val">1.4h</div><div class="db-metric-sub">↓ 18 mins improvement</div></div>
-            <div class="db-metric" data-icon=""><div class="db-metric-label">NPS Score</div><div class="db-metric-val">74</div><div class="db-metric-sub">World-class (>70)</div></div>
-          </div>
-          <div class="db-card">
-            <div class="db-card-title">Weekly Orders</div>
-            <div class="db-card-sub">Orders processed per day</div>
-            <div class="db-bar-chart" id="db-bar-chart"></div>
-          </div>
-        </div>
-        <!-- REPORTS -->
-        <div class="db-view" id="db-reports">
-          <div class="db-view-header"><div><h2>Reports</h2><p>Generated reports & exports</p></div><button class="db-action-btn">+ Generate</button></div>
-          <div class="db-table-wrap"><table class="db-full-table"><thead><tr><th>Report</th><th>Type</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead>
-          <tbody>
-            <tr><td>Q1 Revenue Summary</td><td style="font-family:var(--mono);font-size:.72rem;color:var(--blue);">Financial</td><td style="font-family:var(--mono);font-size:.75rem;color:var(--text-dim);">Mar 01</td><td><span class="db-badge active">Ready</span></td><td><button class="db-tbl-btn">Download</button></td></tr>
-            <tr><td>Client Retention</td><td style="font-family:var(--mono);font-size:.72rem;color:var(--orange);">Analytics</td><td style="font-family:var(--mono);font-size:.75rem;color:var(--text-dim);">Feb 28</td><td><span class="db-badge active">Ready</span></td><td><button class="db-tbl-btn">Download</button></td></tr>
-            <tr><td>Monthly KPI Dashboard</td><td style="font-family:var(--mono);font-size:.72rem;color:var(--green);">Operations</td><td style="font-family:var(--mono);font-size:.75rem;color:var(--text-dim);">Processing...</td><td><span class="db-badge pending">Pending</span></td><td><button class="db-tbl-btn">Cancel</button></td></tr>
-          </tbody></table></div>
-        </div>
-        <!-- USERS -->
-        <div class="db-view" id="db-users"><div id="db-users-inner"></div></div>
-        <!-- CLIENTS -->
-        <div class="db-view" id="db-clients"><div id="db-clients-inner"></div></div>
-        <!-- SETTINGS -->
-        <div class="db-view" id="db-settings"><div id="db-settings-inner"></div></div>
-      </div>
-    </div>
-  </div>
-</div>
-</template>
-
-
-<!-- ════════════════════════════════════════════════
-     PROJECT 2: ECOMMERCE
-════════════════════════════════════════════════ -->
-<template id="tpl-ecommerce">
-<div class="ec-wrap">
-  <div class="ec-cart-panel" id="ec-cart-panel">
-    <div class="ec-cart-header"><h3>🛒 Cart (<span id="ec-cart-count-h">0</span>)</h3><button class="ec-cart-close" onclick="ecCloseCart()">✕</button></div>
-    <div class="ec-cart-items" id="ec-cart-items"><div class="ec-cart-empty"><span style="font-size:2rem;">🛒</span>Your cart is empty</div></div>
-    <div class="ec-cart-footer">
-      <div class="ec-cart-total"><span>Total</span><span id="ec-cart-total">$0.00</span></div>
-      <button class="ec-checkout-btn" onclick="ecCheckout()">PROCEED TO CHECKOUT →</button>
-    </div>
-  </div>
-  <div class="ec-overlay" id="ec-overlay" onclick="ecCloseCart()"></div>
-
-  <div class="ec-header">
-    <div class="ec-logo">Nex<span>Store</span></div>
-    <ul class="ec-nav">
-      <li><a href="#">Home</a></li><li><a href="#">Products</a></li><li><a href="#">Deals</a></li><li><a href="#">About</a></li>
-    </ul>
-    <div class="ec-header-right">
-      <input class="ec-search" placeholder="Search products...">
-      <button class="ec-cart-btn" onclick="ecOpenCart()">🛒 Cart<span class="ec-cart-count" id="ec-badge">0</span></button>
-    </div>
-  </div>
-
-  <div class="ec-hero-banner">
-    <div class="ec-hero-text">
-      <h2>New Arrivals <span style="color:var(--green);">2025</span></h2>
-      <p>Premium tech products, curated for builders and creators.</p>
-      <button class="btn-primary" style="font-size:.8rem;padding:.75rem 1.6rem;">Shop Now →</button>
-    </div>
-    <div class="ec-hero-img">🛍️</div>
-  </div>
-
-  <div class="ec-main">
-    <div class="ec-filters">
-      <span style="font-family:var(--mono);font-size:.72rem;color:var(--text-dim);margin-right:.3rem;">Filter:</span>
-      <button class="ec-filter active" onclick="ecFilter('all',this)">All</button>
-      <button class="ec-filter" onclick="ecFilter('tech',this)">Tech</button>
-      <button class="ec-filter" onclick="ecFilter('audio',this)">Audio</button>
-      <button class="ec-filter" onclick="ecFilter('accessories',this)">Accessories</button>
-      <button class="ec-filter" onclick="ecFilter('software',this)">Software</button>
-    </div>
-    <div class="ec-products-grid" id="ec-products-grid"></div>
-  </div>
-</div>
-</template>
-
-
-<!-- ════════════════════════════════════════════════
-     PROJECT 3: TASKBOARD
-════════════════════════════════════════════════ -->
-<template id="tpl-taskboard">
-<div class="tb-wrap">
-  <!-- Add Task Modal -->
-  <div class="tb-modal" id="tb-modal">
-    <div class="tb-modal-box">
-      <div class="tb-modal-title">// Add New Task</div>
-      <div class="tb-form-group">
-        <label class="tb-form-label">Task Title</label>
-        <input class="tb-form-input" id="tb-task-title" placeholder="Describe the task...">
-      </div>
-      <div class="tb-form-group">
-        <label class="tb-form-label">Column</label>
-        <select class="tb-form-select" id="tb-task-col">
-          <option value="todo">To Do</option>
-          <option value="inprogress">In Progress</option>
-          <option value="review">Review</option>
-          <option value="done">Done</option>
-        </select>
-      </div>
-      <div class="tb-form-group">
-        <label class="tb-form-label">Type</label>
-        <select class="tb-form-select" id="tb-task-type">
-          <option value="feature">Feature</option>
-          <option value="bug">Bug</option>
-          <option value="design">Design</option>
-          <option value="infra">Infra</option>
-        </select>
-      </div>
-      <div class="tb-form-group">
-        <label class="tb-form-label">Priority</label>
-        <select class="tb-form-select" id="tb-task-priority">
-          <option value="high">High</option>
-          <option value="med">Medium</option>
-          <option value="low">Low</option>
-        </select>
-      </div>
-      <div class="tb-form-actions">
-        <button class="tb-cancel-btn" onclick="tbCloseModal()">Cancel</button>
-        <button class="tb-submit-btn" onclick="tbAddTask()">Add Task →</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="tb-header">
-    <div class="tb-logo">Flow<span>Task</span></div>
-    <div class="tb-header-right">
-      <div class="tb-members">
-        <div class="tb-member" style="background:#00ff8820;color:var(--green);border-color:var(--bg);">DR</div>
-        <div class="tb-member" style="background:rgba(77,171,247,.15);color:var(--blue);border-color:var(--bg);">SJ</div>
-        <div class="tb-member" style="background:rgba(255,146,43,.15);color:var(--orange);border-color:var(--bg);">MT</div>
-        <div class="tb-member" style="background:var(--surface2);color:var(--text-dim);border-color:var(--bg);">+3</div>
-      </div>
-      <button class="tb-add-btn" onclick="tbOpenModal()">+ Add Task</button>
-    </div>
-  </div>
-
-  <div class="tb-subheader">
-    <span class="tb-project-tag">Project: <b>BizFlow v2.5</b></span>
-    <span style="color:var(--border)">|</span>
-    <button class="tb-filter active">All</button>
-    <button class="tb-filter">My Tasks</button>
-    <button class="tb-filter">High Priority</button>
-    <span style="margin-left:auto;font-family:var(--mono);font-size:.65rem;color:var(--text-dim);" id="tb-task-count"></span>
-  </div>
-
-  <div class="tb-board" id="tb-board">
-    <div class="tb-col" id="tb-col-todo">
-      <div class="tb-col-header"><span class="tb-col-title" style="color:#fff;">To Do <span class="tb-col-count" id="cnt-todo">0</span></span><button class="tb-col-add" onclick="tbOpenModal('todo')">+</button></div>
-      <div class="tb-col-body" id="body-todo"></div>
-    </div>
-    <div class="tb-col" id="tb-col-inprogress">
-      <div class="tb-col-header"><span class="tb-col-title" style="color:var(--blue);">In Progress <span class="tb-col-count" id="cnt-inprogress">0</span></span><button class="tb-col-add" onclick="tbOpenModal('inprogress')">+</button></div>
-      <div class="tb-col-body" id="body-inprogress"></div>
-    </div>
-    <div class="tb-col" id="tb-col-review">
-      <div class="tb-col-header"><span class="tb-col-title" style="color:var(--yellow);">Review <span class="tb-col-count" id="cnt-review">0</span></span><button class="tb-col-add" onclick="tbOpenModal('review')">+</button></div>
-      <div class="tb-col-body" id="body-review"></div>
-    </div>
-    <div class="tb-col" id="tb-col-done">
-      <div class="tb-col-header"><span class="tb-col-title" style="color:var(--green);">Done <span class="tb-col-count" id="cnt-done">0</span></span><button class="tb-col-add" onclick="tbOpenModal('done')">+</button></div>
-      <div class="tb-col-body" id="body-done"></div>
-    </div>
-  </div>
-</div>
-</template>
-
-
-<!-- ════════════════════════════════════════════════
-     JAVASCRIPT
-════════════════════════════════════════════════ -->
 <script>
-// ── CURSOR ──────────────────────────────────
-const cur = document.getElementById('cur');
-const ring = document.getElementById('cur-ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
-(function animRing(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);})();
-document.addEventListener('mouseover',e=>{if(e.target.matches('a,button,.project-card,.skill-card,.service-card,.ec-product-card,.tb-card')){cur.style.width='6px';cur.style.height='6px';ring.style.width='46px';ring.style.height='46px';ring.style.opacity='.7';}});
-document.addEventListener('mouseout',e=>{if(e.target.matches('a,button,.project-card,.skill-card,.service-card,.ec-product-card,.tb-card')){cur.style.width='10px';cur.style.height='10px';ring.style.width='32px';ring.style.height='32px';ring.style.opacity='.4';}});
+const cursorDot = document.getElementById("cur");
+const cursorRing = document.getElementById("cur-ring");
 
-// ── TYPED HERO ───────────────────────────────
-const texts=['Frontend Developer & Problem Solver','React & Next.js Specialist','Freelance Web Engineer','Turning Ideas into Products'];
-let ti=0,ci=0,del=false;
-const tEl=document.getElementById('typed-text');
-function type(){
-  const cur2=texts[ti];
-  if(!del){tEl.textContent=cur2.slice(0,++ci);if(ci===cur2.length){del=true;setTimeout(type,1800);return;}}
-  else{tEl.textContent=cur2.slice(0,--ci);if(ci===0){del=false;ti=(ti+1)%texts.length;}}
-  setTimeout(type,del?38:72);
-}
-setTimeout(type,1200);
+if (cursorDot && cursorRing && window.matchMedia("(pointer: fine)").matches) {
+  let pointerX = 0;
+  let pointerY = 0;
+  let ringX = 0;
+  let ringY = 0;
 
-// ── SCROLL REVEAL ────────────────────────────
-const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*90);});},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  document.addEventListener("mousemove", (event) => {
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    cursorDot.style.left = pointerX + "px";
+    cursorDot.style.top = pointerY + "px";
+  });
 
-// ── MODAL SYSTEM ─────────────────────────────
-const modalOverlay=document.getElementById('modal-overlay');
-const modalContent=document.getElementById('modal-content');
-const modalTitleBar=document.getElementById('modal-title-bar');
+  function followPointer() {
+    ringX += (pointerX - ringX) * 0.12;
+    ringY += (pointerY - ringY) * 0.12;
+    cursorRing.style.left = ringX + "px";
+    cursorRing.style.top = ringY + "px";
+    requestAnimationFrame(followPointer);
+  }
 
-function openProject(name){
-  const tpl=document.getElementById('tpl-'+name);
-  if(!tpl)return;
-  modalContent.innerHTML='';
-  const clone=tpl.content.cloneNode(true);
-  modalContent.appendChild(clone);
-  modalTitleBar.textContent=name+' — live demo';
-  modalOverlay.classList.add('open');
-  document.body.style.overflow='hidden';
-  if(name==='dashboard'){initDashboard();}
-  if(name==='ecommerce'){initEcommerce();}
-  if(name==='taskboard'){initTaskboard();}
+  followPointer();
 }
 
-function closeModal(){
-  modalOverlay.classList.remove('open');
-  document.body.style.overflow='';
-  modalContent.innerHTML='';
-  // reset states
-  dbRole='admin';dbLoggedIn=false;
-  ecCart=[];
-  tbTasks=JSON.parse(JSON.stringify(tbDefaultTasks));
-}
+const phrases = [
+  "Full-Stack Web Developer",
+  "React & TypeScript",
+  "Node.js & PostgreSQL",
+  "Finance-minded problem solver"
+];
 
-// Close on overlay click
-modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeModal();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+const typedText = document.getElementById("typed-text");
+let phraseIndex = 0;
+let characterIndex = 0;
+let deleting = false;
 
-// ════════════════════════════════════════════
-// ── DASHBOARD APP LOGIC ──────────────────────
-// ════════════════════════════════════════════
-let dbRole='admin',dbLoggedIn=false;
-const dbPerms={admin:['overview','analytics','reports','users','clients','settings'],manager:['overview','analytics','reports','clients'],viewer:['overview','analytics']};
-const dbRoleData={admin:{name:'Admin User',label:'Administrator',av:'AD'},manager:{name:'Jane Manager',label:'Manager',av:'JM'},viewer:{name:'View Only',label:'Viewer',av:'VO'}};
+function typeNextCharacter() {
+  if (!typedText) return;
 
-function dbSelectRole(el){
-  document.querySelectorAll('.db-role').forEach(b=>b.classList.remove('active'));
-  el.classList.add('active');
-  dbRole=el.dataset.role;
-}
+  const phrase = phrases[phraseIndex];
+  characterIndex += deleting ? -1 : 1;
+  typedText.textContent = phrase.slice(0, characterIndex);
 
-function dbLogin(){
-  document.getElementById('db-login').classList.add('hidden');
-  document.getElementById('db-app').style.display='flex';
-  const r=dbRoleData[dbRole];
-  document.getElementById('db-av').textContent=r.av;
-  document.getElementById('db-uname').textContent=r.name;
-  document.getElementById('db-urole').textContent=r.label;
-  dbLoggedIn=true;
-  dbDrawLineChart();
-  dbRenderBarChart();
-}
-
-function dbLogout(){
-  document.getElementById('db-login').classList.remove('hidden');
-  document.getElementById('db-app').style.display='none';
-  dbLoggedIn=false;
-}
-
-function dbSwitch(view,el){
-  if(!dbPerms[dbRole].includes(view)){
-    document.querySelectorAll('.db-view').forEach(v=>v.classList.remove('active'));
-    document.querySelectorAll('.db-nav-item').forEach(n=>n.classList.remove('active'));
-    el.classList.add('active');
-    const target=document.getElementById('db-'+view);
-    target.classList.add('active');
-    target.querySelector('[id$="-inner"]')?target.querySelector('[id$="-inner"]').innerHTML=`<div class="db-access-denied"><div class="da-icon">🔒</div><h3>Access Denied</h3><p>Your role (${dbRoleData[dbRole].label}) cannot access this section.</p></div>`:target.innerHTML=`<div class="db-access-denied"><div class="da-icon">🔒</div><h3>Access Denied</h3><p>Your role cannot access this section.</p></div>`;
-    document.getElementById('db-view-title').textContent=view.charAt(0).toUpperCase()+view.slice(1);
+  if (!deleting && characterIndex === phrase.length) {
+    deleting = true;
+    window.setTimeout(typeNextCharacter, 1600);
     return;
   }
-  document.querySelectorAll('.db-view').forEach(v=>v.classList.remove('active'));
-  document.querySelectorAll('.db-nav-item').forEach(n=>n.classList.remove('active'));
-  document.getElementById('db-'+view).classList.add('active');
-  el.classList.add('active');
-  const titles={overview:'Overview',analytics:'Analytics',reports:'Reports',users:'User Management',clients:'Clients',settings:'Settings'};
-  document.getElementById('db-view-title').textContent=titles[view];
-  if(view==='users')dbRenderUsers();
-  if(view==='clients')dbRenderClients();
-  if(view==='settings')dbRenderSettings();
-  if(view==='analytics')dbRenderBarChart();
+
+  if (deleting && characterIndex === 0) {
+    deleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+  }
+
+  window.setTimeout(typeNextCharacter, deleting ? 35 : 70);
 }
 
-function dbDrawLineChart(){
-  const svg=document.getElementById('db-line-svg');
-  if(!svg)return;
-  const data=[42000,51000,47000,63000,58000,71000,67000,75000,69000,80000,77000,84320];
-  const w=480,h=120,pad=18;
-  const min=Math.min(...data)*.9,max=Math.max(...data)*1.05;
-  const px=i=>pad+i*(w-pad*2)/(data.length-1);
-  const py=v=>h-pad-((v-min)/(max-min))*(h-pad*2);
-  const pts=data.map((v,i)=>`${px(i)},${py(v)}`).join(' ');
-  const area=`M${px(0)},${py(data[0])} `+data.map((v,i)=>`L${px(i)},${py(v)}`).join(' ')+` L${px(data.length-1)},${h-pad} L${px(0)},${h-pad} Z`;
-  const months=['M','A','M','J','J','A','S','O','N','D','J','F'];
-  svg.innerHTML+=`<line x1="${pad}" y1="${py((max+min)/2)}" x2="${w-pad}" y2="${py((max+min)/2)}" class="db-grid-line"/>
-    <path d="${area}" class="db-chart-area"/>
-    <polyline points="${pts}" class="db-chart-line"/>
-    ${data.map((v,i)=>`<circle cx="${px(i)}" cy="${py(v)}" r="2.5" class="db-chart-dot"/>`).join('')}
-    ${months.map((m,i)=>`<text x="${px(i)}" y="${h}" text-anchor="middle" class="db-axis-label">${m}</text>`).join('')}`;
-}
+window.setTimeout(typeNextCharacter, 700);
 
-function dbRenderBarChart(){
-  const el=document.getElementById('db-bar-chart');
-  if(!el)return;
-  const days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],vals=[42,67,55,78,91,34,28];
-  const max=Math.max(...vals);
-  el.innerHTML=vals.map((v,i)=>`<div class="db-bar-wrap"><div class="db-bar" style="height:${(v/max)*100}%" title="${v} orders"></div><div class="db-bar-label">${days[i]}</div></div>`).join('');
-}
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
 
-function dbRefresh(){
-  const el=document.getElementById('db-kpi-rev');
-  if(el)el.textContent='$'+(84000+Math.floor(Math.random()*2000)).toLocaleString();
-}
-
-function dbRenderUsers(){
-  const canEdit=dbRole==='admin';
-  const users=[{n:'Donald Randal',e:'donald@bizflow.io',r:'admin',s:'active',j:'Jan 2024'},{n:'Sarah Johnson',e:'sarah@nexus.io',r:'manager',s:'active',j:'Feb 2025'},{n:'Mike Torres',e:'mike@orbit.io',r:'manager',s:'active',j:'Nov 2024'},{n:'Lisa Chen',e:'lisa@bluesky.io',r:'viewer',s:'active',j:'Mar 2025'},{n:'James Wright',e:'james@dataflow.io',r:'viewer',s:'inactive',j:'Oct 2024'}];
-  document.getElementById('db-users-inner').innerHTML=`
-    <div class="db-view-header"><div><h2>User Management</h2><p>RBAC — ${users.length} users</p></div>${canEdit?'<button class="db-action-btn">+ Invite User</button>':'<span style="font-family:var(--mono);font-size:.72rem;color:var(--text-dim);">🔒 Read-only</span>'}</div>
-    <div class="db-table-wrap"><div class="db-toolbar"><input class="db-search" placeholder="Search users..."></div>
-    <table class="db-full-table"><thead><tr><th>User</th><th>Email</th><th>Role</th><th>Status</th><th>Joined</th>${canEdit?'<th>Actions</th>':''}</tr></thead>
-    <tbody>${users.map(u=>`<tr><td><div class="db-user-cell"><div class="db-uav ${u.r}">${u.n.split(' ').map(x=>x[0]).join('')}</div>${u.n}</div></td><td style="font-family:var(--mono);font-size:.75rem;color:var(--text-dim);">${u.e}</td><td><span class="db-role-tag ${u.r}">${u.r}</span></td><td><span class="db-badge ${u.s}">${u.s}</span></td><td style="font-family:var(--mono);font-size:.75rem;color:var(--text-dim);">${u.j}</td>${canEdit?`<td><button class="db-tbl-btn">Edit</button><button class="db-tbl-btn danger">Remove</button></td>`:''}</tr>`).join('')}
-    </tbody></table></div>`;
-}
-
-function dbRenderClients(){
-  const canEdit=dbRole!=='viewer';
-  const clients=[['Nexus Corp','David Levy','Enterprise','$142,400','Jan 2023','active'],['BlueSky Ltd','Emma Stone','SMB','$68,750','Mar 2023','active'],['Orbit Media','Carlos Ruiz','Startup','$28,200','Jul 2024','pending'],['DataFlow Inc','Nina Patel','Enterprise','$195,800','Nov 2022','active'],['GreenLeaf Co','Tom Walsh','SMB','$31,100','Feb 2024','inactive']];
-  document.getElementById('db-clients-inner').innerHTML=`
-    <div class="db-view-header"><div><h2>Clients</h2><p>Active accounts</p></div>${canEdit?'<button class="db-action-btn">+ Add Client</button>':''}</div>
-    <div class="db-table-wrap"><table class="db-full-table"><thead><tr><th>Company</th><th>Contact</th><th>Segment</th><th>Revenue</th><th>Status</th><th>Actions</th></tr></thead>
-    <tbody>${clients.map(c=>`<tr><td><b>${c[0]}</b></td><td style="color:var(--text-dim);">${c[1]}</td><td style="font-family:var(--mono);font-size:.72rem;color:${c[2]==='Enterprise'?'var(--green)':c[2]==='SMB'?'var(--blue)':'var(--orange)'};">${c[2]}</td><td style="font-family:var(--mono);color:var(--green);">${c[3]}</td><td><span class="db-badge ${c[5]}">${c[5]}</span></td><td><button class="db-tbl-btn">View</button>${canEdit?'<button class="db-tbl-btn">Edit</button>':''}</td></tr>`).join('')}
-    </tbody></table></div>`;
-}
-
-function dbRenderSettings(){
-  const isAdmin=dbRole==='admin';
-  document.getElementById('db-settings-inner').innerHTML=`
-    <div class="db-view-header"><div><h2>Settings</h2><p>Platform config</p></div></div>
-    ${!isAdmin?'<div style="background:rgba(255,107,107,.1);border:1px solid var(--red);padding:.9rem 1.1rem;margin-bottom:1.2rem;font-family:var(--mono);font-size:.75rem;color:var(--red);">⚠ Read-only — contact Admin to make changes.</div>':''}
-    <div class="db-settings-grid">
-      <div class="db-settings-card"><h3>Notifications</h3><p>Control your alerts</p>
-        ${['Email alerts','SMS notifications','Slack integration','Weekly digest'].map(s=>`<div class="db-setting-row"><div class="db-setting-name">${s}</div><div class="db-toggle ${isAdmin&&Math.random()>.4?'on':''}" ${isAdmin?'onclick="this.classList.toggle(\'on\')"':''}></div></div>`).join('')}
-      </div>
-      <div class="db-settings-card"><h3>Security</h3><p>Auth settings</p>
-        ${['Two-factor auth','Session timeout','IP whitelisting','Audit logging'].map(s=>`<div class="db-setting-row"><div class="db-setting-name">${s}</div><div class="db-toggle ${isAdmin&&Math.random()>.4?'on':''}" ${isAdmin?'onclick="this.classList.toggle(\'on\')"':''}></div></div>`).join('')}
-      </div>
-      <div class="db-settings-card"><h3>Database</h3><p>PostgreSQL config</p>
-        ${[['Host','db.bizflow.io'],['Port','5432'],['Database','bizflow_prod'],['SSL','Enabled']].map(([k,v])=>`<div class="db-setting-row"><div class="db-setting-name">${k}</div><span style="font-family:var(--mono);font-size:.72rem;color:var(--green);">${v}</span></div>`).join('')}
-      </div>
-      <div class="db-settings-card"><h3>API Keys</h3><p>Integrations</p>
-        ${[['Stripe','sk_live_••••4f2a'],['Mailgun','key-••••9c1b'],['Slack','xoxb-••••7e3d']].map(([k,v])=>`<div class="db-setting-row"><div><div class="db-setting-name">${k}</div><div class="db-setting-desc">${v}</div></div>${isAdmin?'<button class="db-tbl-btn" style="font-size:.62rem;">Rotate</button>':''}</div>`).join('')}
-      </div>
-    </div>`;
-}
-
-function initDashboard(){/* activated by login button */}
-
-// ════════════════════════════════════════════
-// ── ECOMMERCE LOGIC ──────────────────────────
-// ════════════════════════════════════════════
-let ecCart=[];
-const ecProducts=[
-  {id:1,name:'Dev Keyboard Pro',cat:'tech',price:189,old:220,icon:'⌨️',badge:'sale'},
-  {id:2,name:'4K Webcam Ultra',cat:'tech',price:129,old:null,icon:'📷',badge:'new'},
-  {id:3,name:'Noise Cancel Headphones',cat:'audio',price:249,old:299,icon:'🎧',badge:'sale'},
-  {id:4,name:'Studio Mic Bundle',cat:'audio',price:159,old:null,icon:'🎙️',badge:'new'},
-  {id:5,name:'USB-C Hub 10-in-1',cat:'accessories',price:69,old:89,icon:'🔌',badge:'sale'},
-  {id:6,name:'Laptop Stand Titanium',cat:'accessories',price:89,old:null,icon:'💻',badge:null},
-  {id:7,name:'VS Code Pro License',cat:'software',price:49,old:null,icon:'🖥️',badge:'new'},
-  {id:8,name:'Design System Kit',cat:'software',price:79,old:99,icon:'🎨',badge:'sale'},
-];
-let ecCurrentFilter='all';
-
-function initEcommerce(){
-  ecRenderProducts(ecProducts);
-}
-
-function ecFilter(cat,el){
-  ecCurrentFilter=cat;
-  document.querySelectorAll('.ec-filter').forEach(b=>b.classList.remove('active'));
-  el.classList.add('active');
-  const filtered=cat==='all'?ecProducts:ecProducts.filter(p=>p.cat===cat);
-  ecRenderProducts(filtered);
-}
-
-function ecRenderProducts(prods){
-  const grid=document.getElementById('ec-products-grid');
-  if(!grid)return;
-  grid.innerHTML=prods.map(p=>`
-    <div class="ec-product-card">
-      <div class="ec-product-img">${p.icon}</div>
-      <div class="ec-product-body">
-        <div class="ec-product-cat">${p.cat}</div>
-        <div class="ec-product-name">${p.name}${p.badge?`<span class="ec-badge ${p.badge}">${p.badge}</span>`:''}</div>
-        <div class="ec-product-price">$${p.price}${p.old?`<span class="old">$${p.old}</span>`:''}</div>
-        <div class="ec-product-actions">
-          <button class="ec-add-btn" onclick="ecAddToCart(${p.id})">Add to Cart</button>
-          <button class="ec-wish-btn">♡</button>
-        </div>
-      </div>
-    </div>`).join('');
-}
-
-function ecAddToCart(id){
-  const prod=ecProducts.find(p=>p.id===id);
-  const existing=ecCart.find(i=>i.id===id);
-  if(existing)existing.qty++;
-  else ecCart.push({...prod,qty:1});
-  ecUpdateCart();
-}
-
-function ecUpdateCart(){
-  const total=ecCart.reduce((s,i)=>s+i.qty,0);
-  const badge=document.getElementById('ec-badge');
-  const countH=document.getElementById('ec-cart-count-h');
-  if(badge)badge.textContent=total;
-  if(countH)countH.textContent=total;
-  const totalPrice=ecCart.reduce((s,i)=>s+i.price*i.qty,0);
-  const totalEl=document.getElementById('ec-cart-total');
-  if(totalEl)totalEl.textContent='$'+totalPrice.toFixed(2);
-  ecRenderCartItems();
-}
-
-function ecRenderCartItems(){
-  const container=document.getElementById('ec-cart-items');
-  if(!container)return;
-  if(ecCart.length===0){container.innerHTML='<div class="ec-cart-empty"><span style="font-size:2rem;">🛒</span>Your cart is empty</div>';return;}
-  container.innerHTML=ecCart.map(i=>`
-    <div class="ec-cart-item">
-      <div class="ec-cart-item-icon">${i.icon}</div>
-      <div style="flex:1;">
-        <div class="ec-cart-item-name">${i.name}</div>
-        <div class="ec-cart-item-price">$${i.price}</div>
-        <div class="ec-cart-item-qty">
-          <button class="ec-qty-btn" onclick="ecChangeQty(${i.id},-1)">−</button>
-          <span class="ec-qty-num">${i.qty}</span>
-          <button class="ec-qty-btn" onclick="ecChangeQty(${i.id},1)">+</button>
-        </div>
-      </div>
-      <button class="ec-cart-rm" onclick="ecRemove(${i.id})">✕</button>
-    </div>`).join('');
-}
-
-function ecChangeQty(id,delta){
-  const item=ecCart.find(i=>i.id===id);
-  if(!item)return;
-  item.qty+=delta;
-  if(item.qty<=0)ecCart=ecCart.filter(i=>i.id!==id);
-  ecUpdateCart();
-}
-
-function ecRemove(id){ecCart=ecCart.filter(i=>i.id!==id);ecUpdateCart();}
-
-function ecOpenCart(){
-  const panel=document.getElementById('ec-cart-panel');
-  const overlay=document.getElementById('ec-overlay');
-  if(panel)panel.classList.add('open');
-  if(overlay)overlay.classList.add('show');
-  ecRenderCartItems();
-}
-
-function ecCloseCart(){
-  const panel=document.getElementById('ec-cart-panel');
-  const overlay=document.getElementById('ec-overlay');
-  if(panel)panel.classList.remove('open');
-  if(overlay)overlay.classList.remove('show');
-}
-
-function ecCheckout(){
-  alert('🎉 Order placed! Thank you for your purchase.\n\nIn a real app, this would redirect to Stripe payment.');
-  ecCart=[];
-  ecUpdateCart();
-  ecCloseCart();
-}
-
-// ════════════════════════════════════════════
-// ── TASKBOARD LOGIC ──────────────────────────
-// ════════════════════════════════════════════
-let tbNewTaskCol='todo';
-const tbDefaultTasks={
-  todo:[{title:'Set up CI/CD pipeline',type:'infra',priority:'high',assignee:'DR',date:'Mar 10'},{title:'Design onboarding flow screens',type:'design',priority:'med',assignee:'SJ',date:'Mar 12'},{title:'Add dark mode toggle',type:'feature',priority:'low',assignee:'MT',date:'Mar 15'}],
-  inprogress:[{title:'Fix login session timeout bug',type:'bug',priority:'high',assignee:'DR',date:'Mar 08'},{title:'Build analytics chart component',type:'feature',priority:'med',assignee:'SJ',date:'Mar 09'}],
-  review:[{title:'Responsive mobile nav refactor',type:'feature',priority:'med',assignee:'MT',date:'Mar 07'},{title:'API rate limiting middleware',type:'infra',priority:'high',assignee:'DR',date:'Mar 06'}],
-  done:[{title:'PostgreSQL schema migration',type:'infra',priority:'high',assignee:'DR',date:'Mar 01'},{title:'User profile page UI',type:'design',priority:'low',assignee:'SJ',date:'Feb 28'},{title:'Fix CSV export encoding bug',type:'bug',priority:'med',assignee:'MT',date:'Feb 27'}],
-};
-let tbTasks=JSON.parse(JSON.stringify(tbDefaultTasks));
-
-function initTaskboard(){tbRenderAll();}
-
-function tbRenderAll(){
-  ['todo','inprogress','review','done'].forEach(col=>{
-    const body=document.getElementById('body-'+col);
-    const cnt=document.getElementById('cnt-'+col);
-    if(!body)return;
-    body.innerHTML=tbTasks[col].map((t,i)=>`
-      <div class="tb-card" draggable="true">
-        <div><span class="tb-card-tag ${t.type}">${t.type}</span></div>
-        <div class="tb-card-title">${t.title}</div>
-        <div class="tb-card-footer">
-          <div class="tb-card-assignee" style="background:${t.assignee==='DR'?'rgba(0,255,136,.15)':t.assignee==='SJ'?'rgba(77,171,247,.15)':'rgba(255,146,43,.15)'};color:${t.assignee==='DR'?'var(--green)':t.assignee==='SJ'?'var(--blue)':'var(--orange)'};">${t.assignee}</div>
-          <div class="tb-card-priority ${t.priority}">${t.priority==='high'?'↑ high':t.priority==='med'?'→ med':'↓ low'}</div>
-          <div class="tb-card-date">${t.date}</div>
-        </div>
-      </div>`).join('');
-    if(cnt)cnt.textContent=tbTasks[col].length;
+  document.querySelectorAll(".reveal").forEach((element) => {
+    revealObserver.observe(element);
   });
-  const total=Object.values(tbTasks).reduce((s,a)=>s+a.length,0);
-  const el=document.getElementById('tb-task-count');
-  if(el)el.textContent=total+' total tasks';
-}
-
-function tbOpenModal(col){
-  tbNewTaskCol=col||'todo';
-  const sel=document.getElementById('tb-task-col');
-  if(sel)sel.value=tbNewTaskCol;
-  const modal=document.getElementById('tb-modal');
-  if(modal)modal.classList.add('open');
-}
-
-function tbCloseModal(){
-  const modal=document.getElementById('tb-modal');
-  if(modal)modal.classList.remove('open');
-}
-
-function tbAddTask(){
-  const title=document.getElementById('tb-task-title')?.value.trim();
-  if(!title)return;
-  const col=document.getElementById('tb-task-col')?.value||'todo';
-  const type=document.getElementById('tb-task-type')?.value||'feature';
-  const priority=document.getElementById('tb-task-priority')?.value||'med';
-  const assignees=['DR','SJ','MT'];
-  tbTasks[col].unshift({title,type,priority,assignee:assignees[Math.floor(Math.random()*assignees.length)],date:'Mar '+new Date().getDate()});
-  tbRenderAll();
-  tbCloseModal();
-  document.getElementById('tb-task-title').value='';
+} else {
+  document.querySelectorAll(".reveal").forEach((element) => {
+    element.classList.add("visible");
+  });
 }
 </script>
 </body>
