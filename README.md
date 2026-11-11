@@ -1,30 +1,33 @@
-# Donald Mwashegha — Developer Portfolio
+# Donald Mwashegha — Full-Stack Developer Portfolio
 
-A personal portfolio presenting selected web-development work, technical focus, and contact details.
-
-## View locally
-
-Open index.html in a browser. The same page is retained as my-portfolio.html for the original source file.
+A recruiter-focused portfolio highlighting selected web applications, engineering interests, technical capabilities and contact information.
 
 ## Featured work
 
-### TaskFlow — Full-Stack Task Workspace
-React, TypeScript, Express, PostgreSQL and Prisma. Includes registration, signed HTTP-only sessions, private workspaces, and task management.
+| Project | What it demonstrates | Source |
+| --- | --- | --- |
+| ClientDesk | Freelancer operations: clients, invoices, expenses, authentication and owner-scoped data | [Repository](https://github.com/donaldmwash/clientdesk-freelance-management) · [Live app](https://clientdesk-freelance-management.vercel.app) |
+| LedgerFlow | Finance reconciliation, CSV ingestion, transaction matching and exception review | [Repository](https://github.com/donaldmwash/ledgerflow-finance-reconciliation) · [Live app](https://ledgerflow-finance-reconciliation.vercel.app) |
+| TaskFlow | Full-stack task workspace, REST API, sessions, Prisma and PostgreSQL | [Repository](https://github.com/donaldmwash/taskflow-fullstack-project) |
+| AgentFlow | AI chat, authenticated agent workspace and deterministic workflow engine | [Repository](https://github.com/donaldmwash/agentflow-ai-automation) · [Live app](https://agentflow-ai-automation.vercel.app) |
+| R. & D. Maison | E-commerce storefront, Supabase persistence and Safaricom Daraja integration foundation | [Repository](https://github.com/donaldmwash/rd-maison-ecommerce) · [Live app](https://rd-maison-ecommerce.vercel.app) |
+| SyncSpace | Early-stage exploration of AI-native collaborative documents and CRDT transactions | [Repository](https://github.com/donaldmwash/syncspace-realtime-collaboration) |
 
-[View source code](https://github.com/donaldmwash/taskflow-fullstack-project)
+Live application links are included where a verified production domain is configured. Features and launch readiness vary by project; consult each repository README for setup requirements and current limitations.
 
-### LedgerFlow — Finance Reconciliation Platform
-React and TypeScript application for matching bank statement and ledger CSV exports, reviewing exceptions, and exporting reports.
+## Run locally
 
-[View source code](https://github.com/donaldmwash/ledgerflow-finance-reconciliation)
+No build step or package installation is required.
 
-## About
+1. Clone this repository.
+2. Open index.html in a browser.
 
-I am a self-taught frontend developer and freelancer with a degree in finance. My current development focus is full-stack web application engineering, particularly useful business and finance workflows.
+## Contact
 
-- GitHub: https://github.com/donaldmwash
+**Donald Mwashegha**  
+Email: donaldmwashegha7@gmail.com  
+GitHub: https://github.com/donaldmwash
 
-### R. & D. Maison — Beauty E-commerce Storefront
-A responsive beauty storefront with live product search, filtering, shade selection, cart persistence and WhatsApp checkout requests.
+## Tech represented across selected projects
 
-[View live storefront](https://rd-maison-cosmetics.vercel.app) · [View source](https://github.com/donaldmwash/my-portfolio/tree/main/projects/rd-maison)
+JavaScript, TypeScript, React, Next.js, Node.js, Express, PostgreSQL, Supabase, Prisma, Vitest, GitHub Actions, Docker Compose and Vercel.
