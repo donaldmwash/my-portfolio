@@ -23,3 +23,8 @@ React and TypeScript application for matching bank statement and ledger CSV expo
 I am a self-taught frontend developer and freelancer with a degree in finance. My current development focus is full-stack web application engineering, particularly useful business and finance workflows.
 
 - GitHub: https://github.com/donaldmwash
+
+### R. & D. Maison — Beauty E-commerce Storefront
+A responsive beauty storefront with live product search, filtering, shade selection, cart persistence and WhatsApp checkout requests.
+
+[View live storefront](https://rd-maison-cosmetics.vercel.app) · [View source](https://github.com/donaldmwash/my-portfolio/tree/main/projects/rd-maison)
